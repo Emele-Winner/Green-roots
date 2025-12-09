@@ -424,7 +424,7 @@ export default function Home() {
                   </Card.Description>
                 </Card.Body>
                 <Card.Footer display="flex" color="black" alignItems="flex-start" flexDir="column" >
-                  <Button color="#154216" bgColor="white" width="full" size="md" variant="solid">Learn more</Button>
+                  <Button color="#154216" fontSize= {{ base: 'base', md: 'md',lg:'lg' }}  bgColor="white" width="full" size="md" variant="solid">Learn more</Button>
                   <Text fontSize= {{ base: 'base', md: 'md',lg:'lg' }}   color="gray.200">Starting at ₦1,200/month</Text>
                   <Box width="100%" overflow="hidden" position="relative">
                     <Image
