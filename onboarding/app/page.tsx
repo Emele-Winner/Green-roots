@@ -45,8 +45,8 @@ export default function Home() {
   return (
     <Box  bg="white" >
       <header>
-        <nav className=" flex items-center justify-between">
-          <HStack pt={3} pb={3} wrap="wrap">
+        <Box display="flex" alignItems="center" justifyContent="space-between">
+          <HStack pt={{ base: '3', md: '5' }} pb={{ base: '3', md: '0' }} wrap="wrap">
             <Drawer.Root key={placement} placement={placement}>
               <Drawer.Trigger asChild>
                 <IconButton color="#154216" size={"xs"} aria-label="Open menu">
@@ -183,13 +183,29 @@ export default function Home() {
               < LuShoppingCart />
             </IconButton></div>
           </div>
-        </nav>
+        </Box>
       </header>
       <main className="text-black ">
         <section>
           <article>
-            <Card.Root bgColor="white" color="black" maxW="full" border="none" borderRadius="0" overflow="hidden">
-              <Box width="100%" height="270px" overflow="hidden" position="relative">
+            <Card.Root  p={{ base: '0', md: '5' }} border="none"   bgColor="white" color="black" maxW="full"  borderRadius="0" overflow="hidden">
+              <Box gapX={2} display={{ base: 'block', md: 'flex', lg: 'flex' }} width="100%" height="270px" overflow="hidden" position="relative">
+                          <Card.Root display={{ base: 'none', md: 'block' }} bgColor="white" color="black" maxW="full" border="none" borderRadius="0" overflow="hidden">
+              <Card.Body p={3} >
+                <Card.Title  fontWeight="light" color="#154216" fontSize="2xl">Grow together — city gardens for everyone </Card.Title>
+                <Card.Description mt={2} fontSize= {{ base: 'base', md: 'md',lg:'lg' }}  color="black">
+                 Small spaces, big harvests. Workshops, tool-lending and community plots to help every neighbor grow.
+                </Card.Description>
+              </Card.Body>
+              <Card.Footer p={3} display="flex" color="black" flexDir="column" >
+                <Button color="white" bgColor="#154216" width="full" size="md" variant="solid">Join the Co-op</Button>
+                <Button width="full" color="#154216" borderColor="#154216" variant="outline" size="md">Find a Workshop</Button>
+                <br />
+                <InputGroup endElement={<LuSearch />}>
+                  <Input borderColor="gray.400" placeholder="What would you like to grow?" />
+                </InputGroup>
+              </Card.Footer>
+            </Card.Root>
                 <Image
                   src="/images/first_mainpic_light_theme.jpg"
                   alt="Hero"
@@ -201,13 +217,13 @@ export default function Home() {
                   display="block"
                 />
               </Box>
-              <Card.Body p={3} gap="2">
+              <Card.Body display={{ base: 'block', md: 'none' }} p={3} gap="2">
                 <Card.Title fontWeight="light" color="#154216" fontSize="2xl">Grow together — city gardens for everyone</Card.Title>
-                <Card.Description color="black">
+                <Card.Description mt={2} fontSize= {{ base: 'base', md: 'md',lg:'lg' }}  color="black">
                   Small spaces, big harvests. Workshops, tool-lending and community plots to help every neighbor grow.
                 </Card.Description>
               </Card.Body>
-              <Card.Footer p={3} display="flex" color="black" flexDir="column" >
+              <Card.Footer display={{ base: 'flex', md: 'none' }} p={3}  color="black" flexDir="column" >
                 <Button color="white" bgColor="#154216" width="full" size="md" variant="solid">Join the Co-op</Button>
                 <Button width="full" color="#154216" borderColor="#154216" variant="outline" size="md">Find a Workshop</Button>
                 <br />
@@ -220,12 +236,12 @@ export default function Home() {
         </section>
         <section>
           <article>
-            <Card.Root bgColor="white" color="black" maxW="full" border="none" borderRadius="0" overflow="hidden">
+            <Card.Root p={{ base: '0', md: '5' }} bgColor="white" color="black" maxW="full" border="none" borderRadius="0" overflow="hidden">
               <Card.Body p={3} >
                 <Card.Title fontSize="2xl" >            <Heading fontWeight="light" color="#154216" fontSize="3xl" pb={4} mt={5}>Nature in the neighbourhood</Heading>
-                  <Text  textStyle="md" mb={8} fontWeight="normal">GreenRoots connects urban residents with tools, knowledge and people to grow healthy food and vibrant green spaces.</Text>
                 </Card.Title>
                 <Card.Description>
+                                    <Text color="black"  textStyle="md" mb={8}   fontSize= {{ base: 'base', md: 'md',lg:'lg' }} >GreenRoots connects urban residents with tools, knowledge and people to grow healthy food and vibrant green spaces.</Text>
                   <Grid bg="white"
                     templateRows="repeat(4, 1fr)"
                     templateColumns="repeat(2, 1fr)"
@@ -375,12 +391,12 @@ export default function Home() {
         </section>
         <section>
           <article>
-            <Box  mt={5} p={3} bg="white">
-              <Card.Root                      boxShadow="md"
+            <Box  mt={5}  p={{ base: '3', md: '8' }}  bg="white">
+              <Card.Root                    boxShadow="md"
  bg="#154216" color="black" maxW="full" border="none" borderRadius={15} overflow="hidden">
                 <Card.Body gap="2">
                   <Card.Title fontWeight="light" color="white" fontSize="2xl">GreenRoots Membership</Card.Title>
-                  <Card.Description color="gray.200">
+                  <Card.Description fontSize= {{ base: 'base', md: 'md',lg:'lg' }} color="gray.200">
                     Support local growing with a membership — get access to workshops, plot bookings, plant clinics and our seed library.
                     <List.Root color="white" mt={6} gap="2" variant="plain" align="center">
                       <List.Item>
@@ -409,7 +425,7 @@ export default function Home() {
                 </Card.Body>
                 <Card.Footer display="flex" color="black" alignItems="flex-start" flexDir="column" >
                   <Button color="#154216" bgColor="white" width="full" size="md" variant="solid">Learn more</Button>
-                  <Text fontSize="sm" color="gray.200">Starting at ₦1,200/month</Text>
+                  <Text fontSize= {{ base: 'base', md: 'md',lg:'lg' }}   color="gray.200">Starting at ₦1,200/month</Text>
                   <Box width="100%" overflow="hidden" position="relative">
                     <Image
                       borderRadius={8}
@@ -432,13 +448,13 @@ export default function Home() {
               <Card.Footer display="flex" color="black" flexDir="column" >
                 <Accordion.Root variant="plain" size="lg" multiple defaultValue={["b"]}>
                   {items.map((item, index) => (
-                    <Accordion.Item key={index} value={item.value}>
+                    <Accordion.Item fontSize= {{ base: 'base', md: 'md',lg:'lg' }}  key={index} value={item.value}>
                       <Accordion.ItemTrigger >
-                        <Span color="#154216" flex="1">{item.title}</Span>
+                        <Span  color="#154216" flex="1">{item.title}</Span>
                         <Accordion.ItemIndicator />
                       </Accordion.ItemTrigger>
-                      <Accordion.ItemContent>
-                        <Accordion.ItemBody>{item.text}</Accordion.ItemBody>
+                      <Accordion.ItemContent >
+                        <Accordion.ItemBody fontSize= {{ base: 'base', md: 'md',lg:'lg' }} >{item.text}</Accordion.ItemBody>
                       </Accordion.ItemContent>
                     </Accordion.Item>
                   ))}
@@ -508,14 +524,16 @@ export default function Home() {
               <Card.Root bg="#154216" color="black" maxW="full" border="none" borderRadius={15} overflow="hidden">
                 <Card.Body gap="2">
                   <Card.Title fontWeight="light" color="white" pb={1} fontSize="2xl">Learn with our public programs</Card.Title>
-                  <Card.Description color="white" fontSize="md" >
-                    Short practical series — composting, beekeeping, seasonal planning and seed saving. Join a cohort or take a single session.
-                    <Link href="...">                    <Flex mt={6} fontWeight="bold" alignItems="center"><Text mr={4}>See program dates & offerings </Text>< LuArrowRight /></Flex>
+                  <Card.Description color="white" fontSize= {{ base: 'base', md: 'md',lg:'lg' }} >
+                    Short practical series — composting, beekeeping, seasonal planning and seed saving. Join a cohort or take a single session. <br />
+                    <Link href="...">
+                        <Flex mt={6} fontWeight="bold" alignItems="center"><Text mr={4}>See program dates & offerings </Text>< LuArrowRight /></Flex>
                     </Link>
-                    <List.Root color="white" mt={6} gap="4" listStyleType="none" >
-                      <List.Item>
-                        <Card.Root bgColor="#15382a" color="white" maxW="full" border="none" borderRadius="3">
-                          <Box w="full" borderRadius={3} height="270px" overflow="hidden" position="relative">
+                    <List.Root display={{ base: 'block', md: 'flex' }} color="white" mt={6} gap="4" listStyleType="none" >
+                      <Box gap={{ base: '0', md: '2' }} h="fit-content" display={{ base: 'block', md: 'flex' }}>
+                        <List.Item mt={1} w={{ md: '1/3'}}>
+                        <Card.Root  bgColor="#15382a" color="white" maxW="full" border="none" borderRadius="3">
+                          <Box  borderRadius={3} height="270px" overflow="hidden" position="relative">
                             <Image
                               src="/images/compost.webp"
                               alt="Compost"
@@ -531,7 +549,7 @@ export default function Home() {
                           </Card.Body>
                         </Card.Root>
                       </List.Item>
-                      <List.Item>
+                      <List.Item mt={1} w={{ md: '1/3'}}>
                         <Card.Root bgColor="#15382a" color="white" maxW="full" border="none" borderRadius="3" >
                         <Box w="full" borderRadius={3} height="270px" overflow="hidden" position="relative">
                             <Image
@@ -548,8 +566,8 @@ export default function Home() {
                               Urban-friendly techniques and pollinator gardens.                         </Card.Description>
                           </Card.Body>
                         </Card.Root>                </List.Item>
-                      <List.Item>
-                        <Card.Root bgColor="#15382a" color="white" maxW="full" border="none" borderRadius="3" overflow="hidden">
+                      <List.Item mt={1} w={{ md: '1/3'}}>
+                        <Card.Root  bgColor="#15382a" color="white" maxW="full" border="none" borderRadius="3" overflow="hidden">
                           <Box width="100%" borderRadius={3} height="270px" overflow="hidden" position="relative">
                             <Image
                               src="/images/indoors.jpg"
@@ -557,17 +575,17 @@ export default function Home() {
                               width="100%"
                               height="270px"
                               objectFit="cover"
-                              objectPosition="50% 20%"
                               display="block"
                             />
                           </Box>
                           <Card.Body p={3}>
-                            <Card.Title fontSize="2xl">Indoor Growing Systems</Card.Title>
+                            <Card.Title fontSize="2xl">Indoor Growing</Card.Title>
                             <Card.Description color="gray.300">
                               Grow year-round with space-efficient systems.                      </Card.Description>
                           </Card.Body>
                         </Card.Root>
                       </List.Item>
+                      </Box>
                     </List.Root>
 
                   </Card.Description>
@@ -582,8 +600,9 @@ export default function Home() {
                 <Card.Title fontSize="2xl">Community initiatives — join a project</Card.Title>
                 <Card.Description fontSize="md" color="gray.500">
                   From school gardens to rooftop collectives, help build resilient green spaces in your neighbourhood. <br />
-                  <List.Root color="white" mt={6} gap="2" variant="plain" align="center">
-                    <List.Item>
+                  <List.Root  color="white" mt={6} gap="2" variant="plain" >
+                    <Box  gap={{ base: '0', md: '2' }} display={{ base: 'block', md: 'flex' }} alignItems={{  md: 'center' }} >
+ <List.Item mt={2} w={{ md: '1/3' }}>
                       <Card.Root bgColor="white" color="black" maxW="full" border="none" borderRadius="3" overflow="hidden">
                         <Box width="100%" borderRadius={3} height="270px" overflow="hidden" position="relative">
                           <Image
@@ -615,8 +634,7 @@ export default function Home() {
                         </Card.Body>
                       </Card.Root>
                     </List.Item>
-                    <br />
-                    <List.Item>
+                     <List.Item mt={2} w={{ md: '1/3'}}>
                       <Card.Root bgColor="white" color="black" maxW="full" border="none" borderRadius="3" overflow="hidden">
                         <Box width="100%" borderRadius={3} height="270px" overflow="hidden" position="relative">
                           <Image
@@ -647,13 +665,13 @@ export default function Home() {
                             </Stack>                          </Card.Description>
                         </Card.Body>
                       </Card.Root>             </List.Item>
-                    <br />
-                    <List.Item>
+                
+                    <List.Item mt={2} w={{ md: '1/3'}}>
                       <Card.Root bgColor="white" color="black" maxW="full" border="none" borderRadius="3" overflow="hidden">
                         <Box width="100%" borderRadius={3} height="270px" overflow="hidden" position="relative">
                           <Image
                             src="/images/rooftop.webp"
-                            alt="Rooftop Collective"
+                            alt="School Garden"
                             width="100%"
                             height="270px"
                             objectFit="cover"
@@ -661,7 +679,7 @@ export default function Home() {
                             display="block"
                           />
                         </Box>
-                        <Heading mt={1} pl={1}>Rooftop Collective</Heading>
+                        <Heading mt={1} pl={1}>Community Rooftop Collective</Heading>
                         <Card.Body p={1}>
                           <Card.Description>
                             <Stack direction="row">
@@ -674,14 +692,13 @@ export default function Home() {
                                 <RatingGroup.HiddenInput />
                                 <RatingGroup.Control />
                               </RatingGroup.Root>4.7</Badge>
-                              <Badge variant="outline" bg="white" color="gray.500" >320 members</Badge>
-                              <Badge variant="outline" bg="white" color="gray.500" >6 rooftop sites</Badge>
-                            </Stack>
-                          </Card.Description>
+                              <Badge variant="outline" bg="white" color="gray.500" >50 members</Badge>
+                              <Badge variant="outline" bg="white" color="gray.500" >6 rooftopsites</Badge>
+                            </Stack>                          </Card.Description>
                         </Card.Body>
-                      </Card.Root>
-                    </List.Item>
-
+                      </Card.Root>             </List.Item>
+                
+                    </Box>
                   </List.Root>
                 </Card.Description>
               </Card.Body>
