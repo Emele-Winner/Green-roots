@@ -25,17 +25,9 @@ import { Carousel, Flex } from "@chakra-ui/react";
 import { LuChevronLeft } from "react-icons/lu";
 import { Accordion, Span } from "@chakra-ui/react";
 import { Badge } from "@chakra-ui/react";
-import { HiAtSymbol, HiStar, HiUserGroup, HiUsers } from "react-icons/hi";
-import {
-  Avatar,
-  InputGroup,
-  Input,
-  Field,
-  Card,
-  Stack,
-} from "@chakra-ui/react";
+import { HiUsers } from "react-icons/hi";
+import { InputGroup, Input, Card, Stack } from "@chakra-ui/react";
 import { Text, List, Grid, GridItem } from "@chakra-ui/react";
-import { FaStar } from "react-icons/fa";
 
 const items = [
   {
@@ -95,7 +87,11 @@ export default function Home() {
           >
             <Drawer.Root key={placement} placement={placement}>
               <Drawer.Trigger asChild>
-                <IconButton color="#154216" size={"xs"} aria-label="Open menu">
+                <IconButton
+                  color="#2F855A"
+                  size={{ base: "xs", md: "xs", lg: "xl", xl: "2xl" }}
+                  aria-label="Open menu"
+                >
                   <LuMenu />
                 </IconButton>
               </Drawer.Trigger>
@@ -393,7 +389,7 @@ export default function Home() {
             display="flex"
             alignItems="center"
             fontWeight="light"
-            color="#154216"
+            color="#2F855A "
             size="2xl"
           >
             GreenRoots
@@ -413,7 +409,11 @@ export default function Home() {
             <div>
               <Dialog.Root size="full" motionPreset="slide-in-bottom">
                 <Dialog.Trigger asChild>
-                  <IconButton color="#154216" size={"xs"} aria-label="Search">
+                  <IconButton
+                    color="#2F855A "
+                    size={{ base: "xs", md: "xs", lg: "xl", xl: "2xl" }}
+                    aria-label="Search"
+                  >
                     <LuSearch />
                   </IconButton>
                 </Dialog.Trigger>
@@ -422,15 +422,20 @@ export default function Home() {
                   <Dialog.Positioner>
                     <Dialog.Content>
                       <Dialog.Body bg={"white"}>
-                        <p>
-                          <input
-                            type="text"
-                            placeholder="Search workshops, plants, tools..."
-                          />
-                        </p>
+                        <Input
+                          type="text"
+                          color="black"
+                          width={{
+                            base: "90%",
+                            md: "90%",
+                            lg: "90%",
+                            xl: "90%",
+                          }}
+                          placeholder="Search workshops, plants, tools..."
+                        />
                       </Dialog.Body>
-                      <Dialog.CloseTrigger bg={"black"} asChild>
-                        <CloseButton color="#154216" size="sm" />
+                      <Dialog.CloseTrigger bg="gray.300" asChild>
+                        <CloseButton color="black" size="sm" />
                       </Dialog.CloseTrigger>
                     </Dialog.Content>
                   </Dialog.Positioner>
@@ -439,7 +444,11 @@ export default function Home() {
             </div>
             <div>
               {" "}
-              <IconButton color="#154216" size={"xs"} aria-label="Cart">
+              <IconButton
+                color="#2F855A "
+                size={{ base: "xs", md: "xs", lg: "xl", xl: "2xl" }}
+                aria-label="Cart"
+              >
                 <LuShoppingCart />
               </IconButton>
             </div>
@@ -482,7 +491,7 @@ export default function Home() {
                   <Card.Body p={3}>
                     <Card.Title
                       fontWeight="light"
-                      color="#154216"
+                      color="#2F855A"
                       fontSize="2xl"
                     >
                       Grow together — city gardens for everyone{" "}
@@ -490,7 +499,7 @@ export default function Home() {
                     <Card.Description
                       mt={2}
                       fontSize={{ base: "base", md: "md", lg: "lg" }}
-                      color="black"
+                      color="#1A202C"
                     >
                       Small spaces, big harvests. Workshops, tool-lending and
                       community plots to help every neighbor grow.
@@ -499,17 +508,19 @@ export default function Home() {
                   <Card.Footer p={3} display="flex" color="black">
                     <Button
                       color="white"
-                      bgColor="#154216"
+                      bgColor="#2F855A"
                       width="40%"
                       size="md"
                       variant="solid"
+                      _hover={{ bg: "#276749", transform: "scale(1.05)" }}
                     >
                       Join the Co-op
                     </Button>
                     <Button
                       width="40%"
-                      color="#154216"
-                      borderColor="#154216"
+                      color="#2F855A"
+                      borderColor="#2F855A"
+                      _hover={{ bg: "#F6E05E", transform: "scale(1.05)" }}
                       variant="outline"
                       size="md"
                     >
@@ -529,13 +540,13 @@ export default function Home() {
                 />
               </Box>
               <Card.Body display={{ base: "block", md: "none" }} p={3} gap="2">
-                <Card.Title fontWeight="light" color="#154216" fontSize="2xl">
+                <Card.Title fontWeight="light" color="#2F855A" fontSize="2xl">
                   Grow together — city gardens for everyone
                 </Card.Title>
                 <Card.Description
                   mt={2}
                   fontSize={{ base: "base", md: "md", lg: "lg" }}
-                  color="black"
+                  color="#1A202C"
                 >
                   Small spaces, big harvests. Workshops, tool-lending and
                   community plots to help every neighbor grow.
@@ -549,7 +560,7 @@ export default function Home() {
               >
                 <Button
                   color="white"
-                  bgColor="#154216"
+                  bgColor="#2F855A"
                   width="full"
                   size="md"
                   variant="solid"
@@ -558,8 +569,8 @@ export default function Home() {
                 </Button>
                 <Button
                   width="full"
-                  color="#154216"
-                  borderColor="#154216"
+                  color="#2F855A"
+                  borderColor="#2F855A"
                   variant="outline"
                   size="md"
                 >
@@ -579,7 +590,9 @@ export default function Home() {
         <section>
           <article>
             <Card.Root
-              p={{ base: "0", md: "5", lg: "14", xl: "28" }}
+              pl={{ base: "0", md: "5", lg: "14", xl: "60" }}
+              pr={{ base: "0", md: "5", lg: "14", xl: "60" }}
+              pt={{ base: "0", md: "5", lg: "14", xl: "28" }}
               bgColor="white"
               color="black"
               maxW="full"
@@ -592,7 +605,7 @@ export default function Home() {
                   {" "}
                   <Heading
                     fontWeight="light"
-                    color="#154216"
+                    color="#2F855A"
                     fontSize="3xl"
                     pb={4}
                     mt={5}
@@ -602,7 +615,7 @@ export default function Home() {
                 </Card.Title>
                 <Card.Description>
                   <Text
-                    color="black"
+                    color="#1A202C"
                     textStyle="md"
                     mb={8}
                     fontSize={{ base: "base", md: "md", lg: "lg" }}
@@ -665,7 +678,7 @@ export default function Home() {
                         >
                           <Card.Body>
                             <Badge
-                              color="#154216"
+                              color="#2F855A"
                               width="55px"
                               variant="solid"
                               colorPalette="white"
@@ -677,6 +690,8 @@ export default function Home() {
                             <Card.Description>
                               <IconButton
                                 color="#154216"
+                                bgColor="#2F855A"
+                                _hover={{ bg: "#276749" }}
                                 size={"xs"}
                                 aria-label="Explore"
                               >
@@ -704,7 +719,7 @@ export default function Home() {
                           {" "}
                           <Card.Body>
                             <Badge
-                              color="#154216"
+                              color="#2F855A"
                               width="55px"
                               variant="solid"
                               colorPalette="white"
@@ -716,6 +731,8 @@ export default function Home() {
                             <Card.Description>
                               <IconButton
                                 color="#154216"
+                                bgColor="#2F855A"
+                                _hover={{ bg: "#276749" }}
                                 size={"xs"}
                                 aria-label="Explore"
                               >
@@ -742,7 +759,7 @@ export default function Home() {
                         >
                           <Card.Body>
                             <Badge
-                              color="#154216"
+                              color="#2F855A"
                               width="55px"
                               variant="solid"
                               colorPalette="white"
@@ -754,6 +771,8 @@ export default function Home() {
                             <Card.Description>
                               <IconButton
                                 color="#154216"
+                                bgColor="#2F855A"
+                                _hover={{ bg: "#276749" }}
                                 size={"xs"}
                                 aria-label="Explore"
                               >
@@ -780,7 +799,7 @@ export default function Home() {
                         >
                           <Card.Body>
                             <Badge
-                              color="#154216"
+                              color="#2F855A"
                               width="55px"
                               variant="solid"
                               colorPalette="white"
@@ -792,6 +811,8 @@ export default function Home() {
                             <Card.Description>
                               <IconButton
                                 color="#154216"
+                                bgColor="#2F855A"
+                                _hover={{ bg: "#276749" }}
                                 size={"xs"}
                                 aria-label="Explore"
                               >
@@ -818,7 +839,7 @@ export default function Home() {
                         >
                           <Card.Body>
                             <Badge
-                              color="#154216"
+                              color="#2F855A"
                               width="55px"
                               variant="solid"
                               colorPalette="white"
@@ -830,6 +851,8 @@ export default function Home() {
                             <Card.Description>
                               <IconButton
                                 color="#154216"
+                                bgColor="#2F855A"
+                                _hover={{ bg: "#276749" }}
                                 size={"xs"}
                                 aria-label="Explore"
                               >
@@ -856,7 +879,7 @@ export default function Home() {
                         >
                           <Card.Body>
                             <Badge
-                              color="#154216"
+                              color="#2F855A"
                               width="55px"
                               variant="solid"
                               colorPalette="white"
@@ -868,6 +891,8 @@ export default function Home() {
                             <Card.Description>
                               <IconButton
                                 color="#154216"
+                                bgColor="#2F855A"
+                                _hover={{ bg: "#276749" }}
                                 size={"xs"}
                                 aria-label="Explore"
                               >
@@ -888,13 +913,14 @@ export default function Home() {
           <article>
             <Box
               mt={5}
-              pl={{ base: "0", md: "5", lg: "14", xl: "28" }}
-              pr={{ base: "0", md: "5", lg: "14", xl: "28" }}
+              pl={{ base: "3", md: "5", lg: "14", xl: "60" }}
+              pr={{ base: "3", md: "5", lg: "14", xl: "60" }}
+              pt={{ base: "0", md: "5", lg: "14", xl: "28" }}
               bg="white"
             >
               <Card.Root
                 boxShadow="md"
-                bg="#154216"
+                bg="#2F855A"
                 color="black"
                 pb={{ lg: "10" }}
                 pt={{ lg: "10" }}
@@ -909,10 +935,14 @@ export default function Home() {
                     display={{ lg: "flex" }}
                     justifyContent="center"
                     fontSize={{ base: "base", md: "md" }}
-                    color="gray.200"
+                    color="#F7FAFC"
                   >
                     <Box w={{ lg: "1/2" }}>
-                      <Heading fontWeight="light" color="white" fontSize="2xl">
+                      <Heading
+                        fontWeight="light"
+                        color="#F7FAFC"
+                        fontSize="2xl"
+                      >
                         GreenRoots Membership
                       </Heading>{" "}
                       <br />
@@ -927,25 +957,25 @@ export default function Home() {
                         align="center"
                       >
                         <List.Item>
-                          <List.Indicator asChild color="green.300">
+                          <List.Indicator asChild color="#F7FAFC">
                             <LuStarOff />
                           </List.Indicator>
                           Monthly workshops{" "}
                         </List.Item>
                         <List.Item>
-                          <List.Indicator asChild color="green.300">
+                          <List.Indicator asChild color="#F7FAFC">
                             <LuTrophy />
                           </List.Indicator>
                           Priority plot bookings{" "}
                         </List.Item>
                         <List.Item>
-                          <List.Indicator asChild color="green.300">
+                          <List.Indicator asChild color="#F7FAFC">
                             <LuSpeech />
                           </List.Indicator>
                           Local plant clinics{" "}
                         </List.Item>
                         <List.Item>
-                          <List.Indicator asChild color="green.300">
+                          <List.Indicator asChild color="#F7FAFC">
                             <LuLightbulb />
                           </List.Indicator>
                           Seed library access{" "}
@@ -953,10 +983,15 @@ export default function Home() {
                       </List.Root>
                       <Button
                         mt={4}
-                        color="#154216"
+                        color="black"
                         fontSize={{ base: "base", md: "md", lg: "lg" }}
-                        bgColor="white"
-                        width="full"
+                        bgColor="#F6E05E"
+                        _hover={{
+                          color: "white",
+                          bg: "#276749",
+                          transform: "scale(1.05)",
+                        }}
+                        width={{ base: "100%", md: "100%", lg: "50%" }}
                         size="md"
                         variant="solid"
                       >
@@ -994,8 +1029,9 @@ export default function Home() {
               </Card.Root>
             </Box>
             <Card.Root
-              pl={{ base: "0", md: "5", lg: "14", xl: "28" }}
-              pr={{ base: "0", md: "5", lg: "14", xl: "28" }}
+              pl={{ base: "0", md: "5", lg: "14", xl: "60" }}
+              pr={{ base: "0", md: "5", lg: "14", xl: "60" }}
+              pt={{ base: "0", md: "5", lg: "14", xl: "28" }}
               mt={5}
               bgColor="white"
               color="black"
@@ -1009,19 +1045,19 @@ export default function Home() {
                 <Card.Title
                   fontWeight="light"
                   textDecoration="underline"
-                  textDecorationColor="#154216"
-                  color="#154216"
+                  textDecorationColor="#2F855A"
+                  color="#2F855A"
                   mb={1}
                   fontSize="2xl"
                 >
                   Practical skills for everyday growing
                 </Card.Title>
-                <Card.Description color="black" fontSize="md">
+                <Card.Description color="#1A202C" fontSize="md">
                   Hands-on workshops, simple guides, and friendly mentors to
                   help your garden thrive.{" "}
                 </Card.Description>
               </Card.Body>
-              <Card.Footer display="flex" color="black" flexDir="column">
+              <Card.Footer display="flex" color="#1A202C" flexDir="column">
                 <Accordion.Root
                   variant="plain"
                   size="lg"
@@ -1035,7 +1071,7 @@ export default function Home() {
                       value={item.value}
                     >
                       <Accordion.ItemTrigger>
-                        <Span color="#154216" flex="1">
+                        <Span color="#1A202C" flex="1">
                           {item.title}
                         </Span>
                         <Accordion.ItemIndicator />
@@ -1099,6 +1135,7 @@ export default function Home() {
                       </Text>
                       <Button
                         color="#154216"
+                        _hover={{ bg: "#F6E05E", transform: "scale(1.05)" }}
                         mt={4}
                         variant="outline"
                         size="sm"
@@ -1144,12 +1181,13 @@ export default function Home() {
             <Box
               p={3}
               bg="white"
-              pl={{ base: "0", md: "5", lg: "14", xl: "28" }}
-              pr={{ base: "0", md: "5", lg: "14", xl: "28" }}
+              pl={{ base: "3", md: "5", lg: "14", xl: "60" }}
+              pr={{ base: "3", md: "5", lg: "14", xl: "60" }}
+              pt={{ base: "0", md: "5", lg: "14", xl: "28" }}
             >
               <Card.Root
                 boxShadow="sm"
-                bg="#154216"
+                bg="#2F855A"
                 color="black"
                 maxW="full"
                 border="none"
@@ -1159,14 +1197,14 @@ export default function Home() {
                 <Card.Body gap="2">
                   <Card.Title
                     fontWeight="light"
-                    color="white"
+                    color="#F7FAFC"
                     pb={1}
                     fontSize="2xl"
                   >
                     Learn with our public programs
                   </Card.Title>
                   <Card.Description
-                    color="white"
+                    color="#F7FAFC"
                     fontSize={{ base: "base", md: "md", lg: "lg" }}
                   >
                     Short practical series — composting, beekeeping, seasonal
@@ -1302,22 +1340,22 @@ export default function Home() {
         <section>
           <article>
             <Card.Root
-              pt={3}
               bgColor="white"
-              color="black"
+              color="#2F855A"
               maxW="full"
               border="solid"
               borderColor="white"
               borderRadius="0"
               overflow="hidden"
-              pl={{ base: "0", md: "5", lg: "14", xl: "28" }}
-              pr={{ base: "0", md: "5", lg: "14", xl: "28" }}
+              pl={{ base: "0", md: "5", lg: "14", xl: "60" }}
+              pr={{ base: "0", md: "5", lg: "14", xl: "60" }}
+              pt={{ base: "3", md: "5", lg: "14", xl: "28" }}
             >
               <Card.Body gap="2">
                 <Card.Title fontSize="2xl">
                   Community initiatives — join a project
                 </Card.Title>
-                <Card.Description fontSize="md" color="gray.500">
+                <Card.Description fontSize="md" color="#1A202C">
                   From school gardens to rooftop collectives, help build
                   resilient green spaces in your neighbourhood. <br />
                   <List.Root color="white" mt={6} gap="2" variant="plain">
@@ -1539,7 +1577,8 @@ export default function Home() {
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
-                color="green.700"
+                color="#2F855A"
+                _hover={{ color: "#276749" }}
                 href="..."
               >
                 {" "}
@@ -1551,7 +1590,7 @@ export default function Home() {
       </main>
       <Box
         as="footer"
-        bg="#154216"
+        bg="#2F855A "
         borderColor="gray.200"
         mt={8}
         px={6}
@@ -1564,10 +1603,10 @@ export default function Home() {
           mx="auto"
         >
           <Box>
-            <Heading size="md" mb={3}>
+            <Heading color="#F7FAFC" size="md" mb={3}>
               GreenRoots
             </Heading>
-            <Text fontSize="sm" color="gray.400" mb={3}>
+            <Text fontSize="sm" color="#F7FAFC" mb={3}>
               Local gardens, shared knowledge. We help city dwellers grow food,
               build community and steward urban nature.
             </Text>
@@ -1579,27 +1618,27 @@ export default function Home() {
           </Box>
 
           <Box>
-            <Heading size="sm" mb={3}>
+            <Heading color="#F7FAFC" size="sm" mb={3}>
               Explore
             </Heading>
             <List.Root listStyleType="none" pl={0}>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Workshops
                 </Link>
               </List.Item>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Community Projects
                 </Link>
               </List.Item>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Tool Library
                 </Link>
               </List.Item>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Seed Library
                 </Link>
               </List.Item>
@@ -1607,27 +1646,27 @@ export default function Home() {
           </Box>
 
           <Box>
-            <Heading size="sm" mb={3}>
+            <Heading color="#F7FAFC" size="sm" mb={3}>
               Get Involved
             </Heading>
             <List.Root listStyleType="none" pl={0}>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Volunteer
                 </Link>
               </List.Item>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Partner with us
                 </Link>
               </List.Item>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Donate
                 </Link>
               </List.Item>
               <List.Item>
-                <Link href="..." color="gray.400">
+                <Link href="..." color="#F7FAFC">
                   Careers
                 </Link>
               </List.Item>
@@ -1635,10 +1674,10 @@ export default function Home() {
           </Box>
 
           <Box>
-            <Heading size="sm" mb={3}>
+            <Heading color="#F7FAFC" size="sm" mb={3}>
               Newsletter
             </Heading>
-            <Text fontSize="sm" color="gray.400" mb={3}>
+            <Text fontSize="sm" color="#F7FAFC" mb={3}>
               Get monthly tips, events and seed swaps.
             </Text>
             <HStack>
@@ -1649,7 +1688,12 @@ export default function Home() {
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 size="sm"
               />
-              <Button size="sm" onClick={handleSubscribe}>
+              <Button
+                _hover={{ bg: "#F6E05E", transform: "scale(1.05)" }}
+                bgColor="#F7FAFC"
+                size="sm"
+                onClick={handleSubscribe}
+              >
                 Subscribe
               </Button>
             </HStack>
@@ -1667,19 +1711,19 @@ export default function Home() {
           alignItems="center"
           flexWrap="wrap"
         >
-          <Text fontSize="sm" color="gray.500">
+          <Text fontSize="sm" color="gray.400">
             © {new Date().getFullYear()} GreenRoots. All rights reserved.
           </Text>
           <HStack gap={4}>
-            <Link href="..." color="gray.500" fontSize="sm">
+            <Link href="..." color="gray.400" fontSize="sm">
               Privacy
             </Link>
-            <Link href="..." color="gray.500" fontSize="sm">
+            <Link href="..." color="gray.400" fontSize="sm">
               Terms
             </Link>
             <Link
               href="mailto:hello@greenroots.example"
-              color="gray.500"
+              color="gray.400"
               fontSize="sm"
             >
               Contact
@@ -1712,7 +1756,9 @@ const PropertyCard = ({ data }: PropertyCardProps) => (
         display="flex"
         alignItems="center"
         fontSize={{ base: "base", md: "md", lg: "lg" }}
-        color="black"
+        color="#2F855A"
+        _hover={{ color: "#276749" }}
+        cursor="pointer"
       >
         {data.title}{" "}
         <IconButton color="#154216" size={"xs"} aria-label="Explore">
